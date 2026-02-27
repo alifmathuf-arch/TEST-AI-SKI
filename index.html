@@ -9,13 +9,12 @@
 
 <style>
 :root{
-  --primary:#1E3A8A;
-  --primary-dark:#162B66;
-  --accent:#3B82F6;
-  --light-bg:#F4F6FA;
-  --white:#ffffff;
-  --footer:#0F172A;
-  --text:#1F2937;
+  --primary:#1F2A44;
+  --primary-dark:#141B2D;
+  --soft-bg:#E9EEF8;
+  --white:#FFFFFF;
+  --accent:#D4AF37;
+  --text:#2B2B2B;
 }
 
 *{
@@ -26,21 +25,21 @@
 }
 
 body{
-  background:var(--light-bg);
+  background:var(--soft-bg);
   color:var(--text);
   scroll-behavior:smooth;
 }
 
 /* HEADER */
 header{
-  background:var(--primary);
-  color:var(--white);
-  padding:60px 20px 100px;
+  background:linear-gradient(135deg,#1F2A44,#2E3C63);
+  color:white;
+  padding:80px 20px 120px;
   text-align:center;
 }
 
 header h1{
-  font-size:36px;
+  font-size:38px;
   margin-bottom:10px;
 }
 
@@ -52,38 +51,38 @@ header p{
 nav{
   position:sticky;
   top:0;
-  background:var(--primary);
-  padding:15px 0;
-  z-index:1000;
+  background:rgba(31,42,68,0.95);
+  backdrop-filter:blur(8px);
+  padding:18px 0;
   transition:0.3s;
+  z-index:1000;
 }
 
 nav.scrolled{
-  background:var(--primary-dark);
-  box-shadow:0 5px 20px rgba(0,0,0,0.15);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
 nav ul{
   list-style:none;
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:35px;
 }
 
 nav a{
-  color:var(--white);
+  color:white;
   text-decoration:none;
   font-weight:600;
   transition:0.3s;
 }
 
 nav a:hover{
-  opacity:0.7;
+  color:var(--accent);
 }
 
-/* SECTION GENERAL */
+/* SECTION */
 section{
-  padding:80px 20px;
+  padding:90px 20px;
 }
 
 .container{
@@ -93,10 +92,10 @@ section{
 
 /* ABOUT */
 .about{
-  background:var(--white);
-  border-radius:16px;
-  padding:50px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  background:white;
+  padding:60px;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.05);
 }
 
 .about h2{
@@ -106,30 +105,31 @@ section{
 
 /* SERVICES */
 .services{
+  background:var(--soft-bg);
   text-align:center;
 }
 
 .services h2{
-  margin-bottom:50px;
+  margin-bottom:60px;
   color:var(--primary);
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+  gap:35px;
 }
 
 .card{
-  background:var(--white);
-  padding:30px;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  background:white;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.06);
   transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px);
 }
 
 .card h3{
@@ -139,29 +139,30 @@ section{
 
 /* PORTFOLIO */
 .portfolio{
-  background:var(--white);
+  background:white;
 }
 
 .portfolio h2{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:60px;
   color:var(--primary);
 }
 
 .portfolio-item{
-  background:var(--light-bg);
-  padding:25px;
-  border-radius:12px;
+  background:var(--soft-bg);
+  padding:30px;
+  border-radius:16px;
   transition:0.3s;
 }
 
 .portfolio-item:hover{
-  background:var(--accent);
-  color:var(--white);
+  background:var(--primary);
+  color:white;
 }
 
 /* CONTACT */
 .contact{
+  background:var(--soft-bg);
   text-align:center;
 }
 
@@ -172,26 +173,26 @@ section{
 
 .contact button{
   background:var(--primary);
-  color:var(--white);
+  color:white;
   border:none;
-  padding:15px 30px;
-  border-radius:30px;
+  padding:15px 35px;
+  border-radius:40px;
   cursor:pointer;
   font-weight:600;
   transition:0.3s;
 }
 
 .contact button:hover{
-  background:var(--primary-dark);
+  background:var(--accent);
+  color:black;
 }
 
 /* FOOTER */
 footer{
-  background:var(--footer);
-  color:var(--white);
+  background:var(--primary-dark);
+  color:white;
   text-align:center;
-  padding:40px 20px;
-  margin-top:60px;
+  padding:50px 20px;
 }
 
 footer p{
@@ -201,13 +202,8 @@ footer p{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  header h1{
-    font-size:28px;
-  }
-  nav ul{
-    flex-wrap:wrap;
-    gap:15px;
-  }
+  header h1{font-size:28px;}
+  nav ul{flex-wrap:wrap; gap:15px;}
 }
 </style>
 </head>
@@ -232,7 +228,7 @@ footer p{
   <div class="container">
     <div class="about">
       <h2>Tentang Kami</h2>
-      <p>Kami adalah perusahaan yang bergerak di bidang pengembangan website, aplikasi digital, dan sistem manajemen berbasis cloud. Dengan pendekatan desain modern dan teknologi terbaru, kami membantu bisnis tumbuh secara profesional dan terpercaya.</p>
+      <p>Kami membantu perusahaan dan institusi membangun sistem digital modern dengan pendekatan desain elegan, harmony color, dan pengalaman pengguna premium.</p>
     </div>
   </div>
 </section>
@@ -243,15 +239,15 @@ footer p{
     <div class="grid">
       <div class="card">
         <h3>Website Development</h3>
-        <p>Membangun website profesional dengan desain premium dan responsif.</p>
+        <p>Desain profesional dengan tampilan modern dan responsif.</p>
       </div>
       <div class="card">
         <h3>Web Application</h3>
-        <p>Sistem CBT, LMS, dan aplikasi internal perusahaan berbasis web.</p>
+        <p>Sistem CBT, LMS, dan aplikasi manajemen berbasis web.</p>
       </div>
       <div class="card">
-        <h3>UI/UX Design</h3>
-        <p>Desain modern dengan harmony color dan pengalaman pengguna optimal.</p>
+        <h3>UI/UX Premium</h3>
+        <p>Desain elegan dengan harmoni warna dan pengalaman optimal.</p>
       </div>
     </div>
   </div>
@@ -261,9 +257,9 @@ footer p{
   <div class="container">
     <h2>Portfolio</h2>
     <div class="grid">
-      <div class="portfolio-item">Website Company Profile</div>
-      <div class="portfolio-item">Sistem CBT Online</div>
-      <div class="portfolio-item">Aplikasi Manajemen Sekolah</div>
+      <div class="portfolio-item">Company Profile</div>
+      <div class="portfolio-item">CBT Online System</div>
+      <div class="portfolio-item">School Management App</div>
     </div>
   </div>
 </section>
@@ -271,9 +267,7 @@ footer p{
 <section id="contact" class="contact">
   <div class="container">
     <h2>Hubungi Kami</h2>
-    <p>Siap berkolaborasi untuk proyek digital Anda.</p>
-    <br>
-    <button onclick="alert('Terima kasih! Kami akan segera menghubungi Anda.')">Kirim Pesan</button>
+    <button onclick="alert('Terima kasih, kami akan segera menghubungi Anda.')">Kirim Pesan</button>
   </div>
 </section>
 
@@ -283,12 +277,7 @@ footer p{
 
 <script>
 window.addEventListener("scroll", function(){
-  const nav = document.getElementById("navbar");
-  if(window.scrollY > 50){
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
+  document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
 });
 </script>
 
